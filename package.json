@@ -2,13 +2,20 @@
   "name": "umcgcapi",
   "version": "1.0.0",
   "description": "United Methodist Church General Conference 2016 Unofficial API",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Cary Lee",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "^0.20.0",
+    "express": "^4.13.4",
+    "jquery": "^2.2.3",
+    "request": "^2.72.0",
     "to-markdown": "^3.0.0"
+  },
+  "devDependencies": {
+    "express-livereload": "0.0.24"
   }
 }
