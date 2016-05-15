@@ -3,6 +3,7 @@ var app = express();
 var request = require('request');
 var cheerio = require('cheerio');
 var toMarkdown = require('to-markdown');
+var port = process.env.PORT || 8080;
 
 app.get('/api/petitions/:id', function (req, res) {
   var id = req.param('id');
@@ -18,8 +19,8 @@ app.get('/api/petitions/:id', function (req, res) {
   });
 });
 
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
+app.listen(port, function () {
+    console.log('UMC GC app listening on port 3000!');
 });
 
 function stripExtraHtml(html) {
