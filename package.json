@@ -4,7 +4,8 @@
   "description": "United Methodist Church General Conference 2016 Unofficial API",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "Cary Lee",
   "license": "ISC",
