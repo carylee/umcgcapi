@@ -10,6 +10,7 @@
   "author": "Cary Lee",
   "license": "ISC",
   "dependencies": {
+    "apicache": "0.0.14",
     "cheerio": "^0.20.0",
     "express": "^4.13.4",
     "jquery": "^2.2.3",
