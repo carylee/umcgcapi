@@ -12,6 +12,10 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.get('/healthcheck', function(req, res) {
+  res.send('YAAASS QUEEN!');
+});
+
 app.get('/api/petitions/:id', function(req, res) {
   res.redirect('/petitions/' + req.params.id);
 });
