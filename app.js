@@ -4,7 +4,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 var toMarkdown = require('to-markdown');
 var port = process.env.PORT || 8080;
-var apicache = require('apicache').options({ debug: true }).middleware;
+var apicache = require('apicache').options({}).middleware;
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -18,6 +18,7 @@ app.get('/api/petitions/:id', function(req, res) {
 
 app.get('/petitions/:id', apicache('1 hour'), function (req, res) {
   var id = req.params.id;
+  console.log('Petition lookup: ' + id);
   if (id.length === 5) {
     id = id.substring(2);
   }
