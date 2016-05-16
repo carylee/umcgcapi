@@ -44,6 +44,20 @@ app.get('/petitions/:id', apicache('1 hour'), function (req, res) {
   }
 });
 
+app.get('/petitions/meta/:id', function(req, res) {
+  var id = req.params.id;
+  console.log('Metadata lookup: ' + id);
+
+  var url = 'http://calms2016.umc.org/Menu.aspx?type=Petition&mode=Single&Number=' + id;
+
+  res.header('Content-Type', 'text/html');
+  request(url, function(error, response, body) {
+    $ = cheerio.load(body);
+    var html = $("#innercontent>tr>td").html();
+    res.send(html);
+  });
+});
+
 
 app.listen(port, function () {
     console.log('UMC GC app listening on port ' + port + '!');
@@ -56,3 +70,9 @@ function stripExtraHtml(html) {
 function markdownify(html) {
   return stripExtraHtml(toMarkdown(html, {'gfm':true}));
 }
+
+function parseRow(row) {
+  return [];
+}
+
+module.exports = app;
